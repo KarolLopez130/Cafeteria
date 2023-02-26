@@ -13,9 +13,8 @@ public class CafeteriaDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("\nHola Mundo");
-		System.out.println("\nHola Mundo");
+		// Aqui va todo lo del Main normal
+		
 	}
 
 }

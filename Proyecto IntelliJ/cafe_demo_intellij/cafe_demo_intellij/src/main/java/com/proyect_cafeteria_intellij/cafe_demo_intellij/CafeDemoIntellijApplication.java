@@ -13,7 +13,7 @@ public class CafeDemoIntellijApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("\nHola Mundo");
+		//Aqui va todo lo del Main normal
 
 	}
 }
