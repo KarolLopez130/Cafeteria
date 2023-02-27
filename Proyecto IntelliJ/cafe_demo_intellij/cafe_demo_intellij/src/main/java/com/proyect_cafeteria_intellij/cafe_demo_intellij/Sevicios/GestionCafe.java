@@ -11,7 +11,7 @@ public class GestionCafe {
 
     Scanner ingresoD = new Scanner(System.in);
 
-    public void CrearCafes() {
+    public ArrayList<Cafe> CrearCafes() {
         Cafe cafecito1 = new Cafe("abc111", "Mocha Blanco Latte", "Mochas", "Espresso 100% colombiano con leche vaporizada, salsa de mocha blanco", 8000);
         Cafe cafecito2 = new Cafe("abc112", "Latte", "Latte", "Espresso colombiano con leche vaporizada, ligeramente cubierto con espuma.", 9000);
         Cafe cafecito3 = new Cafe("abc113", "Dolce Canela Latte", "Latte", "Espresso colombiano con leche vaporizada, jarabe de canela dulce.", 6000);
@@ -22,6 +22,7 @@ public class GestionCafe {
         cafesCitos.add(cafecito3);
         cafesCitos.add(cafecito4);
 
+        return cafesCitos;
     }
 
     // GESTIONAR CAFES
