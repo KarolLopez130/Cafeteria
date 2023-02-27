@@ -30,7 +30,7 @@ public class Cafe {
 
     //GETTER Y SETTER
 
-    public String getCodigo() {
+    public  String getCodigo() {
         return codigo;
     }
 
@@ -38,7 +38,7 @@ public class Cafe {
         this.codigo = codigo;
     }
 
-    public String getNombre() {
+    public  String getNombre() {
         return nombre;
     }
 
@@ -46,7 +46,7 @@ public class Cafe {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
+    public  String getTipo() {
         return tipo;
     }
 
@@ -62,17 +62,13 @@ public class Cafe {
         this.tamaño = tamaño;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+    public  String getDescripcion() {return descripcion;}
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
-        return precio;
-    }
+    public  int getPrecio() {return precio;}
 
     public void setPrecio(int precio) {
         this.precio = precio;
