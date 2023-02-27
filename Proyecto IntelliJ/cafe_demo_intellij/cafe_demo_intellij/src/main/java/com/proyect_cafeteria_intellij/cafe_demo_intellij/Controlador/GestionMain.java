@@ -61,11 +61,9 @@ public class GestionMain {
     }
 
 
-    public boolean actualizarNombreP(int indice){
+    public void actualizarNombreP(int indice){
 
-        boolean respuesta = false;
-
-        System.out.println("\nIngresa el nuevo nombre del producto");
+        System.out.println("\nIngresa el nuevo nombre del Postre:");
         String newName = ingresoD.nextLine();
         newName = ingresoD.nextLine();
 
@@ -75,7 +73,6 @@ public class GestionMain {
         if (opcion == 1){
 
             postresAux.get(indice).setNombre(newName);
-            respuesta = true;
 
         } else {
 
@@ -83,15 +80,68 @@ public class GestionMain {
 
         }
 
-        return respuesta;
-
     }
 
 
-    public boolean ActualizarTipoP(){
-        boolean respuesta = false;
+    public void ActualizarTipoP(int indice){
 
-        return respuesta;
+        System.out.println("\nIngresa el nuevo tipo del Postre:");
+        String newTipo = ingresoD.nextLine();
+        newTipo = ingresoD.nextLine();
+
+        System.out.println("\n¿Desea realizar el cambio?\n1. Si\n2. No");
+        int opcion = ingresoD.nextInt();
+
+        if (opcion == 1){
+
+            postresAux.get(indice).setTipo(newTipo);
+
+        } else {
+
+            System.out.println("\nNo se realizo la actualización.");
+
+        }
+    }
+
+    public void ActualizarDescripcionP(int indice){
+
+        System.out.println("\nIngresa la nueva descripción del Postre:");
+        String newDescp = ingresoD.nextLine();
+        newDescp = ingresoD.nextLine();
+
+        System.out.println("\n¿Desea realizar el cambio?\n1. Si\n2. No");
+        int opcion = ingresoD.nextInt();
+
+        if (opcion == 1){
+
+            postresAux.get(indice).setDescripcion(newDescp);
+
+        } else {
+
+            System.out.println("\nNo se realizo la actualización.");
+
+        }
+    }
+
+
+    public void actualizarPrecioP(int indice){
+
+        System.out.println("\nIngresa el nuevo precio del Postre:");
+        int newPrecio = ingresoD.nextInt();
+
+        System.out.println("\n¿Desea realizar el cambio?\n1. Si\n2. No");
+        int opcion = ingresoD.nextInt();
+
+        if (opcion == 1){
+
+            postresAux.get(indice).setPrecio(newPrecio);
+
+        } else {
+
+            System.out.println("\nNo se realizo la actualización.");
+
+        }
+
     }
 
 
@@ -106,7 +156,7 @@ public class GestionMain {
 
             System.out.println(postresAux.get(indice).toString());
 
-            if (indice != 0){
+            if (indice < postresAux.size()){
 
                 System.out.println("\n --- 2. ACTUALIZAR POSTRE --- " +
                         "\n1. Actualizar Nombre\n2. Actualizar Tipo\n3. Actualizar Descripción\n4. Actualizar Precio\n5. Volver");
@@ -119,12 +169,19 @@ public class GestionMain {
                         break;
 
                     case 2:
+                        ActualizarTipoP(indice);
                         break;
 
                     case 3:
+                        ActualizarDescripcionP(indice);
                         break;
 
                     case 4:
+                        actualizarPrecioP(indice);
+                        break;
+
+                    case 5:
+                        System.out.println("\nVolviendo ...");
                         break;
 
                 }
@@ -136,6 +193,25 @@ public class GestionMain {
             }
 
         }
+
+    }
+
+    public void añadirPostre(){
+
+        System.out.println("\n --- AÑADIR POSTRE --- ");
+        System.out.println("\nIngresa tres digitos para generar el codigo del nuevo postre:");
+        int newCode = ingresoD.nextInt();
+
+        if (newCode > 99 && newCode > 1000){
+
+
+
+        } else {
+
+
+
+        }
+
 
     }
 
@@ -153,12 +229,34 @@ public class GestionMain {
             switch (opcion){
 
                 case 1:
-
-                    while (opcion !=  5){
+                    int opcion1 = 0;
+                    while (opcion1 !=  5){
 
                         System.out.println("\n --- 1. GESTIÓN PRODUCTOS --- " +
                                 "\n1. Actualizar Cafe\n2. Actualizar Postre\n3. Añadir Cafe\n4. Añadir Postre\n5. Volver");
-                        opcion = ingresoD.nextInt();
+                        opcion1 = ingresoD.nextInt();
+
+                        switch (opcion1){
+
+                            case 1:
+                                break;
+
+                            case 2:
+                                actualizarPostre();
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                d
+                                break;
+
+                            case 5:
+                                System.out.println("\nVolviendo ...");
+                                break;
+
+                        }
 
                     }
 
