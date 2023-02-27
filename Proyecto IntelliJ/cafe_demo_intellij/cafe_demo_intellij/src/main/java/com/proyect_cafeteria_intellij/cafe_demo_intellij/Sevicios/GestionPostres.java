@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestionPostres {
-
-    ArrayList<Postre> postresAux = new ArrayList<>();
     Scanner ingresoD = new Scanner(System.in);
 
 
     public ArrayList<Postre> crearPostres(){
+
+        ArrayList<Postre> postresAux = new ArrayList<>();
 
         Postre postre1 = new Postre("pst111", "Rollo de Canela", "Rollo", "Exquisito rollo francés relleno de canela.", 6000);
         Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500);
@@ -28,14 +28,14 @@ public class GestionPostres {
     }
 
     // GESTION POSTRES
-    public void mostrarPostres(){
+    public void mostrarPostres(ArrayList<Postre> postresAux){
 
         System.out.println("\n --- POSTRES --- ");
         postresAux.forEach((n) -> System.out.println("\n" + n.toString()));
 
     }
 
-    public int buscarPostre(){
+    public int buscarPostre(ArrayList<Postre> postresAux){
 
         System.out.println("\nIngresa el Codigo del Postre que buscas:");
         String codigo = ingresoD.next();
@@ -62,7 +62,7 @@ public class GestionPostres {
     }
 
 
-    public void actualizarNombreP(int indice){
+    public void actualizarNombreP(int indice, ArrayList<Postre> postresAux){
 
         System.out.println("\nIngresa el nuevo nombre del Postre:");
         String newName = ingresoD.nextLine();
@@ -84,7 +84,7 @@ public class GestionPostres {
     }
 
 
-    public void ActualizarTipoP(int indice){
+    public void ActualizarTipoP(int indice, ArrayList<Postre> postresAux){
 
         System.out.println("\nIngresa el nuevo tipo del Postre:");
         String newTipo = ingresoD.nextLine();
@@ -104,7 +104,7 @@ public class GestionPostres {
         }
     }
 
-    public void ActualizarDescripcionP(int indice){
+    public void ActualizarDescripcionP(int indice, ArrayList<Postre> postresAux){
 
         System.out.println("\nIngresa la nueva descripción del Postre:");
         String newDescp = ingresoD.nextLine();
@@ -125,7 +125,7 @@ public class GestionPostres {
     }
 
 
-    public void actualizarPrecioP(int indice){
+    public void actualizarPrecioP(int indice, ArrayList<Postre> postresAux){
 
         System.out.println("\nIngresa el nuevo precio del Postre:");
         int newPrecio = ingresoD.nextInt();

@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class GestionCafe {
 
-    ArrayList<Cafe> cafesCitos = new ArrayList<>();
-
     Scanner ingresoD = new Scanner(System.in);
 
     public ArrayList<Cafe> CrearCafes() {
+
+        ArrayList<Cafe> cafesCitos = new ArrayList<>();
         Cafe cafecito1 = new Cafe("abc111", "Mocha Blanco Latte", "Mochas", "Espresso 100% colombiano con leche vaporizada, salsa de mocha blanco", 8000);
         Cafe cafecito2 = new Cafe("abc112", "Latte", "Latte", "Espresso colombiano con leche vaporizada, ligeramente cubierto con espuma.", 9000);
         Cafe cafecito3 = new Cafe("abc113", "Dolce Canela Latte", "Latte", "Espresso colombiano con leche vaporizada, jarabe de canela dulce.", 6000);
@@ -28,16 +28,16 @@ public class GestionCafe {
     // GESTIONAR CAFES
 
     //metodo mostrar
-    public void mostrarCafes(){
+    public void mostrarCafes(ArrayList<Cafe> cafesCitos){
 
         System.out.println("\n --- CAFES --- ");
         cafesCitos.forEach((n) -> System.out.println("\n" + n.toString()));
     }
 
     //metodo agregar cafescito
-    public void agregarCafescito(){
+    public void agregarCafescito(ArrayList<Cafe> cafesCitos){
 
-        int indice = buscarCafe();
+        int indice = buscarCafe(cafesCitos);
 
 
         System.out.println("Agregar codigo del cafescito:");
@@ -92,7 +92,7 @@ public class GestionCafe {
     //metodo eliminar
     // ELiminar cafescito de la lista
 
-    public void eliminarCafescito (){
+    public void eliminarCafescito (ArrayList<Cafe> cafesCitos){
         System.out.println("Ingreser el codigo del cafescito a eliminar: ");
         String codigo = ingresoD.nextLine();
 
@@ -112,7 +112,7 @@ public class GestionCafe {
 
 
     //metodo buscar
-    public int buscarCafe () {
+    public int buscarCafe (ArrayList<Cafe> cafesCitos) {
 
         System.out.println("\nIngresa el Codigo del Cafe que buscas: ");
         String codigo = ingresoD.next();
@@ -139,7 +139,7 @@ public class GestionCafe {
 
     }
 
-    public String buscarCafeXCod () {
+    public String buscarCafeXCod (ArrayList<Cafe> cafesCitos) {
 
         System.out.println("\nIngresa el Codigo del Cafe que buscas: ");
         String codigo = ingresoD.next();
@@ -167,7 +167,7 @@ public class GestionCafe {
     }
 
     //metodo actualizar nombre
-    public void actualizarNombreC ( int indice){
+    public void actualizarNombreC (int indice, ArrayList<Cafe> cafesCitos){
 
 
         System.out.println("\nIngresa el nuevo nombre del Cafescito");
@@ -192,7 +192,7 @@ public class GestionCafe {
     }
 
 
-    public void actualizarTipoC ( int indice){
+    public void actualizarTipoC (int indice, ArrayList<Cafe> cafesCitos){
 
 
         System.out.println("\nIngresa el nuevo Tipo del Cafescito");
@@ -216,7 +216,7 @@ public class GestionCafe {
     }
 
     //metodo actualizar Descripcion
-    public void actualizarDescripcionC ( int indice){
+    public void actualizarDescripcionC ( int indice, ArrayList<Cafe> cafesCitos){
 
 
         System.out.println("\nIngresa la nueva Descripcion del Cafescito");
@@ -240,7 +240,7 @@ public class GestionCafe {
     }
 
     //metodo actualizar Precio
-    public void actualizarPrecioC ( int indice){
+    public void actualizarPrecioC ( int indice, ArrayList<Cafe> cafesCitos){
 
 
         System.out.println("\nIngresa el nuevo precio del Cafescito");

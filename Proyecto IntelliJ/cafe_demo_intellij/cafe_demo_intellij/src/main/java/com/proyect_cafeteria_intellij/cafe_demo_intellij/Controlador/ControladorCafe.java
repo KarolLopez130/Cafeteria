@@ -19,8 +19,8 @@ public class ControladorCafe {
 
 
         int opcion = 0;
-        GCafes.mostrarCafes();
-        int indice = GCafes.buscarCafe();
+        GCafes.mostrarCafes(cafescitos);
+        int indice = GCafes.buscarCafe(cafescitos);
 
         while (opcion != 5) {
 
@@ -35,19 +35,19 @@ public class ControladorCafe {
                 switch (opcion) {
 
                     case 1:
-                        GCafes.actualizarNombreC(indice);
+                        GCafes.actualizarNombreC(indice, cafescitos);
                         break;
 
                     case 2:
-                        GCafes.actualizarTipoC(indice);
+                        GCafes.actualizarTipoC(indice, cafescitos);
                         break;
 
                     case 3:
-                        GCafes.actualizarDescripcionC(indice);
+                        GCafes.actualizarDescripcionC(indice, cafescitos);
                         break;
 
                     case 4:
-                        GCafes.actualizarPrecioC(indice);
+                        GCafes.actualizarPrecioC(indice, cafescitos);
                         break;
 
                 }

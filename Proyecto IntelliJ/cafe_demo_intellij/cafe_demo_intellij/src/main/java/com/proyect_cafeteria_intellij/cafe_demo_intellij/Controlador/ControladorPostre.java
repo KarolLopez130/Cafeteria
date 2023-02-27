@@ -15,8 +15,8 @@ public class ControladorPostre {
     public void actualizarPostre(){
 
         int opcion = 0;
-        GPostres.mostrarPostres();
-        int indice = GPostres.buscarPostre();
+        GPostres.mostrarPostres(postresAux);
+        int indice = GPostres.buscarPostre(postresAux);
 
         while (opcion != 5){
 
@@ -31,19 +31,19 @@ public class ControladorPostre {
                 switch (opcion){
 
                     case 1:
-                        GPostres.actualizarNombreP(indice);
+                        GPostres.actualizarNombreP(indice, postresAux);
                         break;
 
                     case 2:
-                        GPostres.ActualizarTipoP(indice);
+                        GPostres.ActualizarTipoP(indice, postresAux);
                         break;
 
                     case 3:
-                        GPostres.ActualizarDescripcionP(indice);
+                        GPostres.ActualizarDescripcionP(indice, postresAux);
                         break;
 
                     case 4:
-                        GPostres.actualizarPrecioP(indice);
+                        GPostres.actualizarPrecioP(indice, postresAux);
                         break;
 
                     case 5:
