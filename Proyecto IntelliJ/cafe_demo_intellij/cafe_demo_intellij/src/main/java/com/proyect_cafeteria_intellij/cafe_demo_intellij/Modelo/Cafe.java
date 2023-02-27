@@ -10,6 +10,10 @@ public class Cafe {
     private int cantidad;
     private int precio;
 
+
+    public Cafe() {
+    }
+
     public Cafe(String codigo, String nombre, String tipo, String tamaño, String descripcion, int precio) {
         this.codigo = codigo;
         this.nombre = nombre;
