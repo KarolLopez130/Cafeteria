@@ -11,7 +11,7 @@ public class GestionPostres {
     Scanner ingresoD = new Scanner(System.in);
 
 
-    public void crearPostres(){
+    public ArrayList<Postre> crearPostres(){
 
         Postre postre1 = new Postre("pst111", "Rollo de Canela", "Rollo", "Exquisito rollo francés relleno de canela.", 6000);
         Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500);
@@ -22,6 +22,8 @@ public class GestionPostres {
         postresAux.add(postre2);
         postresAux.add(postre3);
         postresAux.add(postre4);
+
+        return postresAux;
 
     }
 

@@ -1,12 +1,18 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
 
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Postre;
 import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionPostres;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ControladorPostre {
 
-    public void actualizarPostre(){
+    GestionPostres GPostres = new GestionPostres();
+    ArrayList<Postre> postresAux = GPostres.crearPostres();
+    Scanner ingresoD = new Scanner(System.in);
 
-        GestionPostres GPostres = new GestionPostres();
+    public void actualizarPostre(){
 
         int opcion = 0;
         GPostres.mostrarPostres();
@@ -25,19 +31,19 @@ public class ControladorPostre {
                 switch (opcion){
 
                     case 1:
-                        actualizarNombreP(indice);
+                        GPostres.actualizarNombreP(indice);
                         break;
 
                     case 2:
-                        ActualizarTipoP(indice);
+                        GPostres.ActualizarTipoP(indice);
                         break;
 
                     case 3:
-                        ActualizarDescripcionP(indice);
+                        GPostres.ActualizarDescripcionP(indice);
                         break;
 
                     case 4:
-                        actualizarPrecioP(indice);
+                        GPostres.actualizarPrecioP(indice);
                         break;
 
                     case 5:

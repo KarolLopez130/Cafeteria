@@ -1,6 +1,12 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
 
+import java.util.Scanner;
+
 public class ControladorCaja {
+
+    Scanner ingresoD = new Scanner(System.in);
+    ControladorPostre CPostre = new ControladorPostre();
+    ControladorCafe CCafe = new ControladorCafe();
 
     public void gestionarOtros(){
 
@@ -28,7 +34,7 @@ public class ControladorCaja {
                                 break;
 
                             case 2:
-                                actualizarPostre();
+                                CPostre.actualizarPostre();
                                 break;
 
                             case 3:
