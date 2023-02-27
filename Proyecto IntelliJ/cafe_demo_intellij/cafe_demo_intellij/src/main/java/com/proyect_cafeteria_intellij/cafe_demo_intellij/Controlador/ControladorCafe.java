@@ -1,20 +1,32 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
 
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Cafe;
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionCafe;
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionPostres;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class ControladorCafe {
 
+    Scanner ingresoD = new Scanner(System.in);
 
+    GestionCafe GCafes = new GestionCafe();
+    ArrayList<Cafe>cafescitos = GCafes.CrearCafes();
 
     public void actualizarCafe () {
 
+
+
         int opcion = 0;
-        mostrarCafes();
-        int indice = buscarCafe();
+        GCafes.mostrarCafes();
+        int indice = GCafes.buscarCafe();
 
         while (opcion != 5) {
 
-            System.out.println(postresAux.get(indice).toString());
+            System.out.println(cafescitos.get(indice).toString());
 
-            if (indice > cafesCitos.size()) {
+            if (indice > cafescitos.size()) {
 
                 System.out.println("\n --- 2. ACTUALIZAR CAFESCITOS --- " +
                         "\n1. Actualizar Nombre\n2. Actualizar Tipo\n3. Actualizar Descripción\n4. Actualizar Precio\n5. Volver");
@@ -23,19 +35,19 @@ public class ControladorCafe {
                 switch (opcion) {
 
                     case 1:
-                        actualizarNombreC(indice);
+                        GCafes.actualizarNombreC(indice);
                         break;
 
                     case 2:
-                        actualizarTipoC(indice);
+                        GCafes.actualizarTipoC(indice);
                         break;
 
                     case 3:
-                        actualizarDescripcionC(indice);
+                        GCafes.actualizarDescripcionC(indice);
                         break;
 
                     case 4:
-                        actualizarPrecioC(indice);
+                        GCafes.actualizarPrecioC(indice);
                         break;
 
                 }
