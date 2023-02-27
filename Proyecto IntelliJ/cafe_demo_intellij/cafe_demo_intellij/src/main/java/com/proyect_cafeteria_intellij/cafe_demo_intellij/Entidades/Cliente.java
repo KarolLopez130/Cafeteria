@@ -1,4 +1,4 @@
-package com.proyect_cafeteria_intellij.cafe_demo_intellij.Modelo;
+package com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades;
 
 public class Cliente {
 

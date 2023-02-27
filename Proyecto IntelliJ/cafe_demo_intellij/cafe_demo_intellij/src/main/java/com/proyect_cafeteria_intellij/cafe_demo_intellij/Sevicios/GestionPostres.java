@@ -1,15 +1,14 @@
-package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
+package com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios;
 
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Modelo.Postre;
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Postre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GestionMain {
+public class GestionPostres {
 
     ArrayList<Postre> postresAux = new ArrayList<>();
     Scanner ingresoD = new Scanner(System.in);
-
 
 
     public void crearPostres(){
@@ -144,58 +143,6 @@ public class GestionMain {
 
     }
 
-
-
-    public void actualizarPostre(){
-
-        int opcion = 0;
-        mostrarPostres();
-        int indice = buscarPostre();
-
-        while (opcion != 5){
-
-            System.out.println(postresAux.get(indice).toString());
-
-            if (indice < postresAux.size()){
-
-                System.out.println("\n --- 2. ACTUALIZAR POSTRE --- " +
-                        "\n1. Actualizar Nombre\n2. Actualizar Tipo\n3. Actualizar Descripción\n4. Actualizar Precio\n5. Volver");
-                opcion = ingresoD.nextInt();
-
-                switch (opcion){
-
-                    case 1:
-                        actualizarNombreP(indice);
-                        break;
-
-                    case 2:
-                        ActualizarTipoP(indice);
-                        break;
-
-                    case 3:
-                        ActualizarDescripcionP(indice);
-                        break;
-
-                    case 4:
-                        actualizarPrecioP(indice);
-                        break;
-
-                    case 5:
-                        System.out.println("\nVolviendo ...");
-                        break;
-
-                }
-
-            } else {
-
-                System.out.println("Intenta de nuevo con un codigo existente.");
-
-            }
-
-        }
-
-    }
-
     public void añadirPostre(){
 
         System.out.println("\n --- AÑADIR POSTRE --- ");
@@ -212,66 +159,6 @@ public class GestionMain {
 
         }
 
-
-    }
-
-
-    public void gestionarOtros(){
-
-        int opcion = 0;
-        while (opcion != 4){
-
-            System.out.println("\n --- GESTIÓN --- " +
-                    "\n1. Gestion Productos\n2. Ver Pedidos Actuales\n3. \n4. Cerrar Cafetería");
-
-            opcion = ingresoD.nextInt();
-
-            switch (opcion){
-
-                case 1:
-                    int opcion1 = 0;
-                    while (opcion1 !=  5){
-
-                        System.out.println("\n --- 1. GESTIÓN PRODUCTOS --- " +
-                                "\n1. Actualizar Cafe\n2. Actualizar Postre\n3. Añadir Cafe\n4. Añadir Postre\n5. Volver");
-                        opcion1 = ingresoD.nextInt();
-
-                        switch (opcion1){
-
-                            case 1:
-                                break;
-
-                            case 2:
-                                actualizarPostre();
-                                break;
-
-                            case 3:
-                                break;
-
-                            case 4:
-                                d
-                                break;
-
-                            case 5:
-                                System.out.println("\nVolviendo ...");
-                                break;
-
-                        }
-
-                    }
-
-
-                    break;
-
-                case 2:
-                    break;
-
-                case 3:
-                    break;
-
-            }
-
-        }
 
     }
 

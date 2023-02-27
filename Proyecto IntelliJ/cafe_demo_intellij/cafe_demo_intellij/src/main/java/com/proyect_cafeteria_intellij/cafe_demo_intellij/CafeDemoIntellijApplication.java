@@ -1,12 +1,9 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij;
 
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador.GestionCaja;
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Modelo.Postre;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -26,9 +23,6 @@ public class CafeDemoIntellijApplication implements CommandLineRunner {
 				"ría --------" + "\n\n<--- CAFETERIA ABIERTA --->");
 
 		int opcion = 0;
-
-		GestionCaja Cafe = new GestionCaja();
-		Cafe.CrearCafes();
 
 		while (opcion != 4){
 
