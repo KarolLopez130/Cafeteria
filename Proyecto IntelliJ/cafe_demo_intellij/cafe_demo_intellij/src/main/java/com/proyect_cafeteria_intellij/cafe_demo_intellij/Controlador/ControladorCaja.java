@@ -1,10 +1,16 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
 
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Cafe;
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Postre;
 import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionCafe;
 import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionPostres;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+@RestController
 public class ControladorCaja {
 
     Scanner ingresoD = new Scanner(System.in);
@@ -97,6 +103,17 @@ public class ControladorCaja {
         System.out.println("\n --- INFORME GENERAL FINAL --- ");
 
     }
+
+    @GetMapping("/MostrarCafes")
+    public ArrayList<Cafe> listaCafes(){
+        return CCafe.getCafescitos();
+    }
+
+    public ArrayList<Postre> listaPostres(){
+        return CPostre.getPostresAux();
+    }
+
+
 
 
 }
