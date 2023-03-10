@@ -1,6 +1,7 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
 
 import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionCafe;
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionPostres;
 
 import java.util.Scanner;
 
@@ -8,11 +9,9 @@ public class ControladorCaja {
 
     Scanner ingresoD = new Scanner(System.in);
     ControladorPostre CPostre = new ControladorPostre();
+    GestionPostres GPostre = new GestionPostres();
     ControladorCafe CCafe = new ControladorCafe();
     GestionCafe GCafe = new GestionCafe();
-
-
-
 
 
     public void gestionarOtros(){
@@ -51,13 +50,14 @@ public class ControladorCaja {
                                 break;
 
                             case 4:
-
+                                GPostre.añadirPostre(CPostre.getPostresAux());
                                 break;
                             case 5:
                                 GCafe.eliminarCafescito(CCafe.getCafescitos());
                                 break;
 
                             case 6:
+                                GPostre.eliminarPostre(CPostre.getPostresAux());
                                 break;
 
                             case 7:
@@ -75,6 +75,7 @@ public class ControladorCaja {
                     break;
 
                 case 3:
+                    System.out.println("\nVolviendo ...");
                     break;
 
             }
@@ -82,5 +83,20 @@ public class ControladorCaja {
         }
 
     }
+
+
+    public void mostrarMenu(){
+
+        System.out.println("\n --- MENÚ PRODUCTOS --- ");
+        GCafe.mostrarCafes(CCafe.getCafescitos());
+        GPostre.mostrarPostres(CPostre.getPostresAux());
+
+    }
+
+    public void informeGeneral(){
+        System.out.println("\n --- INFORME GENERAL FINAL --- ");
+
+    }
+
 
 }

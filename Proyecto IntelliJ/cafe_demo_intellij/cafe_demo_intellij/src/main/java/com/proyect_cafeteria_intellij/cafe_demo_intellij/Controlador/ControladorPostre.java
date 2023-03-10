@@ -12,6 +12,11 @@ public class ControladorPostre {
     ArrayList<Postre> postresAux = GPostres.crearPostres();
     Scanner ingresoD = new Scanner(System.in);
 
+    public ArrayList<Postre> getPostresAux(){
+        return postresAux;
+
+    }
+
     public void actualizarPostre(){
 
         int opcion = 0;

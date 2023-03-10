@@ -145,7 +145,7 @@ public class GestionPostres {
 
     }
 
-    public void añadirPostre(){
+    public void añadirPostre(ArrayList<Postre> postresAux){
 
         System.out.println("\n --- AÑADIR POSTRE --- ");
         System.out.println("\nIngresa tres digitos para generar el codigo del nuevo postre:");
@@ -153,14 +153,57 @@ public class GestionPostres {
 
         if (newCode > 99 && newCode > 1000){
 
+            String newCodigo = "pst" + newCode;
 
+            System.out.println("\nIngresa el nombre del nuevo Postre:");
+            String newNombre = ingresoD.nextLine();
+            newNombre = ingresoD.nextLine();
+
+            System.out.println("\nIngresa el tipo del nuevo Postre:");
+            String newTipo = ingresoD.next();
+            newTipo = ingresoD.next();
+
+            System.out.println("\nIngresa la descripción del nuevo Postre:");
+            String newDescripcion = ingresoD.nextLine();
+            newDescripcion = ingresoD.nextLine();
+
+            System.out.println("\nIngresa el precio unitario del nuevo Postre:");
+            int newPrecio = ingresoD.nextInt();
+
+            Postre newPostre = new Postre(newCodigo, newNombre, newTipo, newDescripcion, newPrecio);
+            postresAux.add(newPostre);
+
+            System.out.println("\nPostre añadido con éxito.");
 
         } else {
 
-
+            System.out.println("\nEl código es invalido. Intenta agregar el Postre de nuevo.");
 
         }
 
+
+    }
+
+    public void eliminarPostre(ArrayList<Postre> postresAux){
+
+        System.out.println("\nIngresa el código del cafesito a eliminar:");
+        String codigo = ingresoD.next();
+        codigo = ingresoD.next();
+
+        for (int i = 0; i < postresAux.size(); i++){
+
+            if (codigo.equals(postresAux.get(i).getCodigo())){
+
+                postresAux.remove(i);
+                System.out.println("\nPostre eliminado con éxito.");
+
+            } else {
+
+                System.out.println("\nPostre no encontrado. Por favor intente de nuevo.");
+
+            }
+
+        }
 
     }
 

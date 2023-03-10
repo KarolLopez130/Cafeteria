@@ -1,5 +1,6 @@
 package com.proyect_cafeteria_intellij.cafe_demo_intellij;
 
+import com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador.ControladorCaja;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,7 @@ public class CafeDemoIntellijApplication implements CommandLineRunner {
 		//Aqui va todo lo del Main normal
 
 		Scanner ingresoD = new Scanner(System.in);
+		ControladorCaja cajaAux = new ControladorCaja();
 
 		System.out.println("-------- SDK Cafete" +
 				"ría --------" + "\n\n<--- CAFETERIA ABIERTA --->");
@@ -33,17 +35,18 @@ public class CafeDemoIntellijApplication implements CommandLineRunner {
 			switch (opcion){
 
 				case 1:
-
+					cajaAux.mostrarMenu();
 					break;
 
 				case 2:
 					break;
 
 				case 3:
+					cajaAux.gestionarOtros();
 					break;
 
 				case 4:
-					System.out.println("\n --- INFORME GENERAL FINAL --- ");
+					cajaAux.informeGeneral();
 					break;
 
 				default:
