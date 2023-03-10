@@ -97,13 +97,15 @@ public class GestionCafe {
         String codigo = ingresoD.nextLine();
 
         for (int i = 0; i < cafesCitos.size(); i++) {
-            Cafe cafe = cafesCitos.get(i);
+           if (codigo.equals(cafesCitos.get(i).getCodigo()))
             // buscamos cual de las patentes en la lista coincide con lo que el usuario escribió:
-            if (codigo.equals(cafe.getCodigo())) {
+             {
                 // Eliminamos un elemento de la lista utilizando .remove()
                 cafesCitos.remove(i);
                 System.out.println("Cafescito eliminado");
-            }
+            }else {
+               System.out.println("Cafescito no encontrado! Por favor intente de nuevo");
+           }
         }
     }
 
@@ -139,32 +141,6 @@ public class GestionCafe {
 
     }
 
-    public String buscarCafeXCod (ArrayList<Cafe> cafesCitos) {
-
-        System.out.println("\nIngresa el Codigo del Cafe que buscas: ");
-        String codigo = ingresoD.next();
-        codigo = ingresoD.next();
-        int indice = 0;
-
-        for (int i = 0; i < cafesCitos.size(); i++) {
-
-            if (cafesCitos.get(i).getCodigo().equals(codigo)) {
-
-                System.out.println("\nCafescito Encontrado.");
-                System.out.println(cafesCitos.get(i).toString());
-
-
-            } else {
-                codigo = "0";
-                System.out.println("\nEl Cafescito no se encuentra en la base de datos.");
-
-            }
-
-        }
-
-        return codigo;
-
-    }
 
     //metodo actualizar nombre
     public void actualizarNombreC (int indice, ArrayList<Cafe> cafesCitos){

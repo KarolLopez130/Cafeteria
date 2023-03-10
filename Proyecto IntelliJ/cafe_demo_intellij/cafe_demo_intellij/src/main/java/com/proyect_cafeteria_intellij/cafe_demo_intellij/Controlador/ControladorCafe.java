@@ -14,6 +14,10 @@ public class ControladorCafe {
     GestionCafe GCafes = new GestionCafe();
     ArrayList<Cafe>cafescitos = GCafes.CrearCafes();
 
+    public ArrayList<Cafe> getCafescitos() {
+        return cafescitos;
+    }
+
     public void actualizarCafe () {
 
 
