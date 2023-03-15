@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Optima, sans-serif;
+    --border: 1px solid hsla(240, 25% ,50% , 0.3);
+    --border-table: 1px solid hsla(240, 25% ,50% , 01);
+    background: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+    font-family: var(--Lato);
+	font-weight: 300;
+  }
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+
+/*** Import Fonts ***/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+:root {
+    /*** Variables ***/
+    --Lato:	'Lato', sans-serif;
+    --Open-sans:	'Open Sans', sans-serif;
+    --dark-gray: #3c3c3c;
+    --light-gray: #a6a6a6;
+    --UIblue: #3CBBF7;
+    --UIred: #E74C3C;
+    --UIyellow: #F8E71C;
+    --UIgreen: #13bf11;
+    --dark-brown: #542900;
+}
+
+
+/* -------------------------------- 
+Small Window Size and Mobile Style
+-------------------------------- */
+
+@media screen and (max-width: 875px) {
+  .button-container {
+    margin: 10px 10px !important;
+  }
+  
+  h2 {
+	  font-size: 15vw !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+	
+	.nav, .navbar {
+		width: 90% !important;
+		
+		
+	}
+    .nav-item {
+        font-size: 10px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+	
+	.navbar-container {
+		height: 120px !important;
+
+	}
+	.nav, .navbar {
+		flex-wrap: wrap !important;
+		
+		
+	}
+
+    .nav-item {
+        margin: 5px 5px !important;
+    }
+}
+
+/* -------------------------------- 
+		General Style
+-------------------------------- */
+
+
+
+/*** Navbar ***/
+
+.navbar-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-right: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	width: 100%;
+	height: 70px;
+	background: linear-gradient(15deg, #0f4667 0%, #2a6973 150%); 
+}
+
+.nav, .navbar {
+	margin: auto;
+	margin-top: 20px;
+	font-family: var(--Lato);
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: nowrap;
+}
+
+.nav a, .navbar a {
+
+    color: white;
+	text-decoration: none;
+
+}
+
+.nav-item {
+
+    padding: 5px 0;
+}
+
+.nav-item::after {
+
+    content: '\00a0';
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: relative;
+    top: 3px;
+    background: transparent;
+    transition: top .3s ease-out;
+    -webkit-transition: top .3s ease-out;
+
+}
+
+.nav-item:hover:after {
+    top: 7px;
+    background: #3c3c3c;
+}
+
+.active:after {
+	height: 2px !important;
+	background: #e74c3c !important;
+}

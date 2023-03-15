@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería SDK</title>
+    <script src="menu.js" type="text/javascript" defer></script>
+    <script src="mPostres.js" type="text/javascript" defer></script>
+    <script src="mCafes.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="/estilos/navbar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>	
+
+	
+	<!-- Navbar -->
+	<nav class="navbar-container">
+		<ul class="nav navbar">
+			<li class="nav-item"><a href="/index.html">INICIO</a></li>
+			<li class="nav-item active"><a href="/menu/menu.html">MENÚ</a></li>
+			<li class="nav-item"><a href="#">ORDEN</a></li>
+			<li class="nav-item"><a href="/productos/postres.html">ADD PRODUCTO</a></li>
+			<li class="nav-item"><a href="#switch">PEDIDOS</a></li>
+			<li class="nav-item"><a href="/log-in/log-in.html">INICIAR SESIÓN</a></li>
+		</ul>
+	</nav>
+
+    <br>
+    <h1>Menú</h1>
+    <h1>Menú</h1>
+
+    <div class="separadorL">
+        <h2>Café Caliente</h2>
+    </div>
+
+    <!-- Aqui se insertan las cards de productos con javascript-->
+    <div class="contenedor-cafes">
+    
+    </div>
+
+    <!-- template del producto -->
+    <template id="template-prod">
+        <article class="cartola">
+            <!-- Imagen del producto -->
+            <div class="contenedor-img">
+                <img src="" alt="">
+            </div>
+            <!-- Nombre y descripción del producto -->
+            <div class="div-info">
+                <h2 class="nombre-prod">Nombre Producto</h2>
+                <hr class="separador">
+                <p class="descripcion-prod">Descripción producto</p>
+            </div>
+            <!-- Precio y Agregar al carrito -->
+            <div class="div-precio-boton">
+                <p class="precio">precio Producto</p>
+            </div>
+        </article>
+    </template>
+    <br><br>
+
+    <div class="separadorL">
+        <h2>Panaderia</h2>
+    </div>
+
+    <div class="contenedor-postres">
+        
+    </div>
+
+    <template id="template-postre">
+        <article class="cartola">
+            <!-- Imagen del producto -->
+            <div class="contenedor-img">
+                <img src="" alt="">
+            </div>
+            <!-- Nombre y descripción del producto -->
+            <div class="div-info">
+                <h2 class="nombre-prod">Nombre Producto</h2>
+                <hr class="separador">
+                <p class="descripcion-prod">Descripción producto</p>
+            </div>
+            <!-- Precio y Agregar al carrito -->
+            <div class="div-precio-boton">
+                <p class="precio">precio Producto</p>
+            </div>
+        </article>
+    </template>
+    <br><br>
+    
+</body>
+</html>

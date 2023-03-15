@@ -12,10 +12,11 @@ public class GestionCafe {
     public ArrayList<Cafe> CrearCafes() {
 
         ArrayList<Cafe> cafesCitos = new ArrayList<>();
-        Cafe cafecito1 = new Cafe("abc111", "Mocha Blanco Latte", "Mochas", "Espresso 100% colombiano con leche vaporizada, salsa de mocha blanco", 8000);
-        Cafe cafecito2 = new Cafe("abc112", "Latte", "Latte", "Espresso colombiano con leche vaporizada, ligeramente cubierto con espuma.", 9000);
-        Cafe cafecito3 = new Cafe("abc113", "Dolce Canela Latte", "Latte", "Espresso colombiano con leche vaporizada, jarabe de canela dulce.", 6000);
-        Cafe cafecito4 = new Cafe("abc114", "Arequipe Latte", "Latte", "Espresso 100% colombiano con leche vaporizada a la perfección, combinado con salsa de arequipe, terminado con espiral de caramelo.", 7000);
+        Cafe cafecito1 = new Cafe("abc111", "Mocha Blanco Latte", "Mochas", "Espresso 100% colombiano con leche vaporizada, salsa de mocha blanco", 8000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMOCHA%20BLANCO-11.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Cafe cafecito2 = new Cafe("abc112", "Latte", "Latte", "Espresso colombiano con leche vaporizada, ligeramente cubierto con espuma.", 9000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FLATTE-09.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Cafe cafecito5 = new Cafe("abc115", "Mocha Latte", "Latte", "Espresso 100% colombiano con leche vaporizada a la perfección y salsa de chocolate.", 8000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMOCHA%20LATTE-12.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Cafe cafecito3 = new Cafe("abc113", "Dolce Canela Latte", "Latte", "Espresso colombiano con leche vaporizada, jarabe de canela dulce.", 6000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FDOLCE%20CANELA%20LATTE-07.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Cafe cafecito4 = new Cafe("abc114", "Arequipe Latte", "Latte", "Espresso 100% colombiano con leche vaporizada a la perfección, combinado con salsa de arequipe, terminado con espiral de caramelo.", 7000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FAREQUIPE%20LATTE-02.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
 
         cafesCitos.add(cafecito1);
         cafesCitos.add(cafecito2);

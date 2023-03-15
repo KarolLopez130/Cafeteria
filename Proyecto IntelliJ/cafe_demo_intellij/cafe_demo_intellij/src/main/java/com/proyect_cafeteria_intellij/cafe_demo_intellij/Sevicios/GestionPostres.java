@@ -13,10 +13,10 @@ public class GestionPostres {
 
         ArrayList<Postre> postresAux = new ArrayList<>();
 
-        Postre postre1 = new Postre("pst111", "Rollo de Canela", "Rollo", "Exquisito rollo francés relleno de canela.", 6000);
-        Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500);
-        Postre postre3 = new Postre("pst113", "Muffin Arándanos", "Muffin", "Muffin de arandanos y vainilla.", 5500);
-        Postre postre4 = new Postre("pst114", "Arepa con Queso", "Arepa", "Arepa de maíz con queso y margarina.", 5000);
+        Postre postre1 = new Postre("pst111", "Rollo de Canela", "Rollo", "Exquisito rollo francés relleno de canela.", 6000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FRollo-canela_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FMuffin-chocolate_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Postre postre3 = new Postre("pst113", "Muffin Arándanos", "Muffin", "Muffin de arandanos y vainilla.", 5500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FMUFF%201_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Postre postre4 = new Postre("pst114", "Arepa con Queso", "Arepa", "Arepa de maíz con queso y margarina.", 5000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2023-02%2FAREPA_DE_QUESO.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
 
         postresAux.add(postre1);
         postresAux.add(postre2);
@@ -170,8 +170,8 @@ public class GestionPostres {
             System.out.println("\nIngresa el precio unitario del nuevo Postre:");
             int newPrecio = ingresoD.nextInt();
 
-            Postre newPostre = new Postre(newCodigo, newNombre, newTipo, newDescripcion, newPrecio);
-            postresAux.add(newPostre);
+
+            
 
             System.out.println("\nPostre añadido con éxito.");
 

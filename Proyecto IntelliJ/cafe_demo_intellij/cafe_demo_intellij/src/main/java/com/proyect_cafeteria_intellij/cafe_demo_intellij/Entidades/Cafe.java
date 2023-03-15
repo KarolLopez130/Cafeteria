@@ -9,26 +9,29 @@ public class Cafe {
     private String descripcion;
     private int cantidad;
     private int precio;
+    private String imagen;
 
 
     public Cafe() {
     }
 
-    public Cafe(String codigo, String nombre, String tipo, String tamaño, String descripcion, int precio) {
+    public Cafe(String codigo, String nombre, String tipo, String tamaño, String descripcion, int precio, String imagen) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.tamaño = tamaño;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
-    public Cafe(String codigo, String nombre, String tipo, String descripcion, int precio) {
+    public Cafe(String codigo, String nombre, String tipo, String descripcion, int precio, String imagen) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
 
