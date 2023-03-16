@@ -1,17 +1,31 @@
-package com.proyect_cafeteria_intellij.cafe_demo_intellij.Controlador;
+package com.cafeteria.cafeteriaDemo.Controlador;
 
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Postre;
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios.GestionPostres;
+import com.cafeteria.cafeteriaDemo.Entidades.Postre;
+import com.cafeteria.cafeteriaDemo.Servicios.ServicioPostre;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
+@RestController
 public class ControladorPostre {
 
-    GestionPostres GPostres = new GestionPostres();
-    ArrayList<Postre> postresAux = GPostres.crearPostres();
-    Scanner ingresoD = new Scanner(System.in);
+    ServicioPostre GPostres = new ServicioPostre();
+    //ArrayList<Postre> postresAux = GPostres.crearPostres();
+    //Scanner ingresoD = new Scanner(System.in);
 
+    @GetMapping("/saludito")
+    public String saludo(){
+        return "Hola Mundo";
+
+    }
+
+    @GetMapping("/MostrarPostres")
+    public ArrayList<Postre> listarPostres(){
+        return GPostres.mostrarPostres();
+    }
+
+    /*
     public ArrayList<Postre> getPostresAux(){
         return postresAux;
 
@@ -65,6 +79,6 @@ public class ControladorPostre {
 
         }
 
-    }
+    }*/
 
 }

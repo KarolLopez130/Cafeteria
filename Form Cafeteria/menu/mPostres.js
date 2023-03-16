@@ -1,4 +1,5 @@
 // Array de productos
+
 const productosP = {
     producto1: {
       nombre: 'Mocha Blanco Latte',
@@ -31,10 +32,22 @@ const productosP = {
       srcImg: 'https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FAREQUIPE%20LATTE-02.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop'
     },
   }
-// Se captura el template de los productos
-const templatePostre = document.getElementById('template-postre').content
-const contenedorPostres = document.querySelector('.contenedor-postres')
-const fragmentP = document.createDocumentFragment()
+
+
+$(document).ready(function(){
+
+  // Se captura el template de los productos
+  const templatePostre = document.getElementById('template-postre').content;
+  const contenedorPostres = document.querySelector('.contenedor-postres');
+  const fragmentP = document.createDocumentFragment();
+  
+  $.ajax({
+
+    url
+
+  })
+
+})
 
 
 // TODO LO RELACIONADO A AGREGAR LOS PRODUCTOS AL DOM

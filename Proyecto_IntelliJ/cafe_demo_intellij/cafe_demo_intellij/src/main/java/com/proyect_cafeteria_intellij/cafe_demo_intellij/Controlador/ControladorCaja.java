@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-@RestController
+
 public class ControladorCaja {
 
-    Scanner ingresoD = new Scanner(System.in);
+    /*Scanner ingresoD = new Scanner(System.in);
     ControladorPostre CPostre = new ControladorPostre();
     GestionPostres GPostre = new GestionPostres();
     ControladorCafe CCafe = new ControladorCafe();
@@ -112,6 +112,7 @@ public class ControladorCaja {
     public ArrayList<Postre> listaPostres(){
         return CPostre.getPostresAux();
     }
+     */
 
 
 

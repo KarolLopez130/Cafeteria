@@ -1,17 +1,16 @@
-package com.proyect_cafeteria_intellij.cafe_demo_intellij.Sevicios;
+package com.cafeteria.cafeteriaDemo.Servicios;
 
-import com.proyect_cafeteria_intellij.cafe_demo_intellij.Entidades.Postre;
+import com.cafeteria.cafeteriaDemo.Entidades.Postre;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class GestionPostres {
-    Scanner ingresoD = new Scanner(System.in);
+public class ServicioPostre {
 
+    //Scanner ingresoD = new Scanner(System.in);
+    ArrayList<Postre> postresAux = new ArrayList<>();
 
-    public ArrayList<Postre> crearPostres(){
+    public ServicioPostre(){
 
-        ArrayList<Postre> postresAux = new ArrayList<>();
 
         Postre postre1 = new Postre("pst111", "Rollo de Canela", "Rollo", "Exquisito rollo francés relleno de canela.", 6000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FRollo-canela_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
         Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FMuffin-chocolate_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
@@ -23,12 +22,16 @@ public class GestionPostres {
         postresAux.add(postre3);
         postresAux.add(postre4);
 
+    }
+
+    public ArrayList<Postre> mostrarPostres(){
+
         return postresAux;
 
     }
 
     // GESTION POSTRES
-    public void mostrarPostres(ArrayList<Postre> postresAux){
+    /*public void mostrarPostres(ArrayList<Postre> postresAux){
 
         System.out.println("\n --- POSTRES --- ");
         postresAux.forEach((n) -> System.out.println("\n" + n.toString()));
@@ -171,7 +174,7 @@ public class GestionPostres {
             int newPrecio = ingresoD.nextInt();
 
 
-            
+
 
             System.out.println("\nPostre añadido con éxito.");
 
@@ -206,5 +209,7 @@ public class GestionPostres {
         }
 
     }
+
+     */
 
 }
