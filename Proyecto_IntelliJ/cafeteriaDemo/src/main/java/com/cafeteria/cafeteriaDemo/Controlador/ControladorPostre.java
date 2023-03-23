@@ -2,11 +2,11 @@ package com.cafeteria.cafeteriaDemo.Controlador;
 
 import com.cafeteria.cafeteriaDemo.Entidades.Postre;
 import com.cafeteria.cafeteriaDemo.Servicios.ServicioPostre;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class ControladorPostre {
 
@@ -22,7 +22,24 @@ public class ControladorPostre {
 
     @GetMapping("/MostrarPostres")
     public ArrayList<Postre> listarPostres(){
+
         return GPostres.mostrarPostres();
+    }
+
+
+    @PostMapping("/AgregarPostre")
+    public String addPostre(@RequestBody Postre postreAux){
+        return GPostres.agregarPostre(postreAux);
+    }
+
+    @PutMapping("/ActualizarPostre")
+    public String updatePostre(@RequestBody Postre postreAux){
+        return GPostres.editarPostre(postreAux);
+    }
+
+    @DeleteMapping("/BorrarPostre")
+    public String deletePostre(@RequestBody Postre postreAux){
+        return GPostres.borrarPostre(postreAux);
     }
 
     /*

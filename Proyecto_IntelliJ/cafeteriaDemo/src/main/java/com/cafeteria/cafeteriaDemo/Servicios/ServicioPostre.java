@@ -16,11 +16,13 @@ public class ServicioPostre {
         Postre postre2 = new Postre("pst112", "Muffin de Chocolate", "Muffin", "Muffin de chocolate, horneado con trozos de chocolate.", 5500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FMuffin-chocolate_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
         Postre postre3 = new Postre("pst113", "Muffin Arándanos", "Muffin", "Muffin de arandanos y vainilla.", 5500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FMUFF%201_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
         Postre postre4 = new Postre("pst114", "Arepa con Queso", "Arepa", "Arepa de maíz con queso y margarina.", 5000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2023-02%2FAREPA_DE_QUESO.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
+        Postre postre5 = new Postre("pst115", "Napolitana de Cacao", "Pan", "Exótica combinación de masa tierna rellena con una mezcla de frutos del bosque, con Mini perlas sabor a fresa y cubierta de cacao.", 7500, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FNapolitana-cacao_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
 
         postresAux.add(postre1);
         postresAux.add(postre2);
         postresAux.add(postre3);
         postresAux.add(postre4);
+        postresAux.add(postre5);
 
     }
 
@@ -29,6 +31,98 @@ public class ServicioPostre {
         return postresAux;
 
     }
+
+    public boolean asignarID(Postre postreAux){
+        boolean respuesta = false;
+
+        String idPostre = "";
+        String idExistente = "";
+
+        while(idPostre.equals(idExistente)){
+
+            int num = (int) Math.floor(Math.random() * (1000 - 100) + 100);
+            idPostre = "pst" + num;
+
+            for (int i = 0; i < postresAux.size(); i++){
+
+                if (postresAux.get(i).getCodigo().equals(idPostre)){
+                    idExistente = postresAux.get(i).getCodigo();
+                    break;
+                }
+
+            }
+
+        }
+
+        if (!idPostre.equals(idExistente)){
+            postreAux.setCodigo(idPostre);
+            respuesta = true;
+        }
+
+
+        return respuesta;
+
+    }
+
+    public String agregarPostre(Postre postreAux){
+        boolean response = asignarID(postreAux);
+        String respuesta = "";
+
+        if (response){
+            postresAux.add(postreAux);
+            respuesta = "Postre Registrado Exitosamente.";
+
+        } else {
+
+            respuesta = "Error. No se pudo registrar el postre.";
+
+        }
+
+        return respuesta;
+
+    }
+
+
+    public String editarPostre(Postre postreAux){
+
+        for (int i = 0; i < postresAux.size(); i++){
+
+            if (postresAux.get(i).getCodigo().equals(postreAux.getCodigo())){
+
+                System.out.println("\nPostre Encontrado.");
+                System.out.println(postresAux.get(i).toString());
+
+                postresAux.get(i).setNombre(postreAux.getNombre());
+                postresAux.get(i).setTipo(postreAux.getTipo());
+                postresAux.get(i).setDescripcion(postreAux.getDescripcion());
+                postresAux.get(i).setPrecio(postreAux.getPrecio());
+                postresAux.get(i).setImagen(postreAux.getImagen());
+
+            }
+
+        }
+
+        return "Postre Actualizado Exitosamente.";
+
+    }
+
+    public String borrarPostre(Postre postreAux){
+
+        for (int i = 0; i < postresAux.size(); i++){
+
+            if (postresAux.get(i).getCodigo().equals(postreAux.getCodigo())){
+
+                System.out.println("\nPostre Encontrado.");
+                System.out.println(postresAux.get(i).toString());
+                postresAux.remove(i);
+
+            }
+
+        }
+
+        return "Postre Eliminado Exitosamente";
+    }
+
 
     // GESTION POSTRES
     /*public void mostrarPostres(ArrayList<Postre> postresAux){

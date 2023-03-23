@@ -1,19 +1,44 @@
 package com.cafeteria.cafeteriaDemo.Controlador;
 
 import com.cafeteria.cafeteriaDemo.Entidades.Cafe;
+import com.cafeteria.cafeteriaDemo.Entidades.Postre;
 import com.cafeteria.cafeteriaDemo.Servicios.ServicioCafe;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@CrossOrigin (origins = "*", maxAge = 3600)
+@RestController
 public class ControladorCafe {
 
     Scanner ingresoD = new Scanner(System.in);
 
     ServicioCafe GCafes = new ServicioCafe();
-    ArrayList<Cafe> cafescitos = GCafes.CrearCafes();
 
-    public ArrayList<Cafe> getCafescitos() {
+    @GetMapping("/MostrarCafes")
+    public ArrayList<Cafe> listarCafes(){
+        return GCafes.mostrarCafesitos();
+    }
+
+
+    @PostMapping("/AgregarCafe")
+    public String addCafe(@RequestBody Cafe cafesito){
+        return GCafes.agregarCafesito(cafesito);
+    }
+
+    @PutMapping("/ActualizarCafe")
+    public String updateCafe(@RequestBody Cafe cafesito){
+        return GCafes.editarCafesito(cafesito);
+    }
+
+    @DeleteMapping("/BorrarCafe")
+    public String deleteCafe(@RequestBody Cafe cafesito){
+
+        return GCafes.borrarCafesito(cafesito);
+    }
+
+    /*public ArrayList<Cafe> getCafescitos() {
         return cafescitos;
     }
 
@@ -63,6 +88,6 @@ public class ControladorCafe {
 
         }
 
-    }
+    }*/
 
 }

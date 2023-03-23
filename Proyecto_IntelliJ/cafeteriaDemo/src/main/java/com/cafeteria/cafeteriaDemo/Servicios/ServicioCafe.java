@@ -1,6 +1,7 @@
 package com.cafeteria.cafeteriaDemo.Servicios;
 
 import com.cafeteria.cafeteriaDemo.Entidades.Cafe;
+import com.cafeteria.cafeteriaDemo.Entidades.Postre;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,10 +9,10 @@ import java.util.Scanner;
 public class ServicioCafe {
 
     Scanner ingresoD = new Scanner(System.in);
+    ArrayList<Cafe> cafesCitos = new ArrayList<>();
 
-    public ArrayList<Cafe> CrearCafes() {
+    public ServicioCafe() {
 
-        ArrayList<Cafe> cafesCitos = new ArrayList<>();
         Cafe cafecito1 = new Cafe("abc111", "Mocha Blanco Latte", "Mochas", "Espresso 100% colombiano con leche vaporizada, salsa de mocha blanco", 8000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMOCHA%20BLANCO-11.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
         Cafe cafecito2 = new Cafe("abc112", "Latte", "Latte", "Espresso colombiano con leche vaporizada, ligeramente cubierto con espuma.", 9000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FLATTE-09.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
         Cafe cafecito5 = new Cafe("abc115", "Mocha Latte", "Latte", "Espresso 100% colombiano con leche vaporizada a la perfección y salsa de chocolate.", 8000, "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMOCHA%20LATTE-12.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop");
@@ -23,12 +24,116 @@ public class ServicioCafe {
         cafesCitos.add(cafecito3);
         cafesCitos.add(cafecito4);
         cafesCitos.add(cafecito5);
-
-        return cafesCitos;
     }
 
     // GESTIONAR CAFES
 
+    //mostrar cafesitos Ajax
+    public ArrayList<Cafe> mostrarCafesitos(){
+
+        return cafesCitos;
+
+    }
+
+
+    public boolean asignarID(Cafe cafesito){
+
+        boolean respuesta = false;
+
+        String idCafe = "";
+        String idExistente = "";
+
+        while(idCafe.equals(idExistente)){
+
+            int num = (int) Math.floor(Math.random() * (1000 - 100) + 100);
+            idCafe = "pst" + num;
+
+            for (int i = 0; i < cafesCitos.size(); i++){
+
+                if (cafesCitos.get(i).getCodigo().equals(idCafe)){
+                    idExistente = cafesCitos.get(i).getCodigo();
+                    break;
+                }
+
+            }
+
+        }
+
+        if (!idCafe.equals(idExistente)){
+            cafesito.setCodigo(idCafe);
+            respuesta = true;
+        }
+
+
+        return respuesta;
+
+    }
+
+
+    public String agregarCafesito(Cafe cafesito){
+
+        boolean response = asignarID(cafesito);
+        String respuesta = "";
+
+        if (response){
+            cafesCitos.add(cafesito);
+            respuesta = "Postre Registrado Exitosamente.";
+
+        } else {
+
+            respuesta = "Error. No se pudo registrar el postre.";
+
+        }
+
+        return respuesta;
+
+    }
+
+
+    public String editarCafesito(Cafe cafeAux){
+
+        for (int i = 0; i < cafesCitos.size(); i++){
+
+            if (cafesCitos.get(i).getCodigo().equals(cafeAux.getCodigo())){
+
+                System.out.println("\nCafe Encontrado.");
+                System.out.println(cafesCitos.get(i).toString());
+
+                cafesCitos.get(i).setNombre(cafeAux.getNombre());
+                cafesCitos.get(i).setTipo(cafeAux.getTipo());
+                cafesCitos.get(i).setDescripcion(cafeAux.getDescripcion());
+                cafesCitos.get(i).setPrecio(cafeAux.getPrecio());
+                cafesCitos.get(i).setImagen(cafeAux.getImagen());
+
+            }
+
+        }
+
+        return "Cafesito Actualizado Exitosamente.";
+
+    }
+
+
+    public String borrarCafesito(Cafe cafeAux){
+
+        for (int i = 0; i < cafesCitos.size(); i++){
+
+            if (cafesCitos.get(i).getCodigo().equals(cafeAux.getCodigo())){
+
+                System.out.println("\nCafe Encontrado.");
+                System.out.println(cafesCitos.get(i).toString());
+                cafesCitos.remove(i);
+
+            }
+
+        }
+
+        return "Cafe Eliminado Exitosamente";
+    }
+
+
+
+/*
     //metodo mostrar
     public void mostrarCafes(ArrayList<Cafe> cafesCitos){
 
@@ -239,6 +344,6 @@ public class ServicioCafe {
 
         }
 
-    }
+    }*/
 
 }

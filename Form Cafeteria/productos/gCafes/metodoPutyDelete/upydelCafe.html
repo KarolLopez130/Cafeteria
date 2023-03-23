@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería SDK</title>
+    <link rel="stylesheet" href="/productos/gCafes/metodoPutyDelete/styleCafe.css">
+    <link rel="stylesheet" href="/productos/formProd.css">
+    <link rel="stylesheet" href="/estilos/navbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <script src="/productos/gCafes/gCafes.js" type="text/javascript" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+	<nav class="navbar-container">
+		<ul class="nav navbar">
+			<li class="nav-item"><a href="/index.html">INICIO</a></li>
+			<li class="nav-item"><a href="/menu/menu.html">MENÚ</a></li>
+			<li class="nav-item"><a href="#">ORDEN</a></li>
+			<li class="nav-item active"><a href="/productos/gProductos.html">GESTIÓN PRODUCTO</a></li>
+			<li class="nav-item"><a href="/pedidos_actuales/listaPedidos.html">PEDIDOS</a></li>
+			<li class="nav-item"><a href="/log-in/log-in.html">INICIAR SESIÓN</a></li>
+		</ul>
+	</nav>
+    <h1>Cafetería SDK</h1>
+    <h1>Cafetería SDK</h1>
+
+    <section id="form_wrap" class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>AÑADIR<br>CAFÉ</h2>
+            </section>
+            <section class="info_items">
+      
+            </section>
+        </section>
+
+        <form action="" class="form_contact">
+            <h2>Actualizar Producto - Café</h2>
+            <div class="user_info">
+                <label for="codigo">Codigo</label>
+                <input type="text" id="codigo" required disabled>
+
+                <label for="names">Nombre</label>
+                <input type="text" id="names" required>
+
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" required>
+
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" required>
+
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" required>
+
+                <label for="url">URL Imagen</label>
+                <input type="text" id="url" required>
+
+                <input type="button" value="Actualizar Café" id="btnActualizar">
+            </div>
+        </form>
+
+    </section>
+
+    <div class="container">
+        <h2>Lista de Cafés</h2>
+        <table class="table table-hover" id="CafesTabla">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Opción</th>
+                </tr>
+            </thead>
+            <tbody id="datosForm">
+                
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <template id="CafeLinea">
+        <tr>
+            <td class="idCafe">Id Café</td>
+            <td class="nombre">Nombre</td>
+            <td class="tipo">Tipo</td>
+            <td class="descripcion">Descripción</td>
+            <td class="precio">Precio</td>
+            <td><a class="imagen">Imagen Café</a></td>
+            <td class="opcion">
+                <input type="button" value="Actualizar" class="btnUpdate">
+                <input type="button" value="Eliminar" class="btnEliminar">
+            </td>
+        </tr>
+    </template>
+    
+</body>
+</html>

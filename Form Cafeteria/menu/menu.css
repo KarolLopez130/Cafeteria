@@ -94,7 +94,7 @@ img {
     margin: 0 .5em;
 }
 .precio::before {
-    content: 'COP$';
+    content: 'COP $';
     padding-right: 0.3rem;
 }
 .boton {

@@ -7,7 +7,7 @@
     --spacing-l: 24px;
     --spacing-xl: 32px;
     --spacing-xxl: 64px;
-    --width-container: 500px;
+    --width-container: 1000px;
   }
   
   *{
@@ -41,7 +41,7 @@
     align-items: flex-start;
     display: flex;
     justify-content: center;
-    padding: var(--spacing-xl) var(--spacing-l);
+    padding: var(--spacing-xxl) var(--spacing-l);
   }
   
   .card-grid{
@@ -59,9 +59,9 @@
     }
   }
   
-  @media(min-width: 1060px){
+  @media(min-width: 960px){
     .card-grid{
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(4, 1fr); 
     }
   }
   

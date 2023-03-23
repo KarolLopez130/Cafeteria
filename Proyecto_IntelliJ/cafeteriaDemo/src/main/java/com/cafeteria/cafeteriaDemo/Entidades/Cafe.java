@@ -89,6 +89,14 @@ public class Cafe {
         this.cantidad = cantidad;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     @Override
     public String toString() {
         return "Codigo: " + codigo + '\'' +

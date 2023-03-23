@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafetería SDK</title>
-    <script src="menu.js" type="text/javascript" defer></script>
     <script src="mPostres.js" type="text/javascript" defer></script>
     <script src="mCafes.js" type="text/javascript" defer></script>
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="/estilos/navbar.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>	
 
@@ -21,8 +21,8 @@
 			<li class="nav-item"><a href="/index.html">INICIO</a></li>
 			<li class="nav-item active"><a href="/menu/menu.html">MENÚ</a></li>
 			<li class="nav-item"><a href="#">ORDEN</a></li>
-			<li class="nav-item"><a href="/productos/postres.html">ADD PRODUCTO</a></li>
-			<li class="nav-item"><a href="#switch">PEDIDOS</a></li>
+			<li class="nav-item"><a href="/productos/gProductos.html">GESTIÓN PRODUCTO</a></li>
+			<li class="nav-item"><a href="/pedidos_actuales/listaPedidos.html">PEDIDOS</a></li>
 			<li class="nav-item"><a href="/log-in/log-in.html">INICIAR SESIÓN</a></li>
 		</ul>
 	</nav>
@@ -41,7 +41,7 @@
     </div>
 
     <!-- template del producto -->
-    <template id="template-prod">
+    <template id="template-cafe">
         <article class="cartola">
             <!-- Imagen del producto -->
             <div class="contenedor-img">
