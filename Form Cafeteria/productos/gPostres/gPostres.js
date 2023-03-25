@@ -51,9 +51,18 @@ function loadButtons(){
 
     $('.btnEliminar').on('click', function(){
         
-        var num = this.getAttribute('id');
-        console.log(num)
-        borrarPostre(num)
+        var opcion = window.confirm('¿Estas seguro de eliminar este Postre?')
+
+        if (opcion){
+            var num = this.getAttribute('id');
+            console.log(num)
+            borrarPostre(num)
+            location.reload()
+        } else {
+
+            alert('No se elimino el postre.')
+
+        }
     
     })
 }
@@ -76,34 +85,46 @@ $('#btnActualizar').on('click', function(){
 
     if ($('#names').val() != "" && $('#tipo').val() != "" && $('#descripcion').val() != "" && $('#precio').val() != 0 && $('#url').val() != ""){
 
+        var opcion = window.confirm('¿Estas seguro de Actualizar este Postre?')
 
-        let postre = {
+        if (opcion){
+            let postre = {
 
-            codigo: $('#codigo').val(),
-            nombre: $('#names').val(),
-            tipo: $('#tipo').val(),
-            descripcion: $('#descripcion').val(),
-            precio: parseInt($('#precio').val()),
-            imagen: $('#url').val(),
+                codigo: $('#codigo').val(),
+                nombre: $('#names').val(),
+                tipo: $('#tipo').val(),
+                descripcion: $('#descripcion').val(),
+                precio: parseInt($('#precio').val()),
+                imagen: $('#url').val(),
+    
+            }
+    
+            let postreActualizar = JSON.stringify(postre);
+            console.log(postre)
+            console.log(postreActualizar)
+            $.ajax({
+    
+                url: "http://localhost:8080/ActualizarPostre",
+                type: "PUT",
+                data: postreActualizar,
+                contentType: "application/JSON",
+                datatype: "JSON",
+    
+                success: function(response){
+                    alert(response);
+                }
+
+    
+            })
+        } else {
+
+            alert('No se elimino el postre.')
 
         }
 
-        let postreActualizar = JSON.stringify(postre);
-        console.log(postre)
-        console.log(postreActualizar)
-        $.ajax({
+        location.reload()
 
-            url: "http://localhost:8080/ActualizarPostre",
-            type: "PUT",
-            data: postreActualizar,
-            contentType: "application/JSON",
-            dataType: "JSON",
-
-            success: function(response){
-                alert(response);
-            }
-
-        })
+        
 
     } else {
         alert("Hay uno o varios campo/s faltante/s, por favor, llene todos los campos.")
@@ -115,20 +136,13 @@ $('#btnActualizar').on('click', function(){
 
 function borrarPostre(index){
 
-    let postre = {
+    let codPostre = arregloPostres[index]['codigo'];
 
-        codigo: arregloPostres[index]['codigo'],
-
-    }
-
-    let postreEliminar = JSON.stringify(postre);
     $.ajax({
 
-        url: "http://localhost:8080/BorrarPostre",
+        url: "http://localhost:8080/BorrarPostre/" + codPostre,
         type: "DELETE",
-        data: postreEliminar,
-        contentType: "application/JSON",
-        dataType: "JSON",
+        datatype: "JSON",
 
         success: function(response){
             alert(response);

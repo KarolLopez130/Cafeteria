@@ -22,7 +22,7 @@ $('#btnSend').on('click', function(){
             type: "POST",
             data: postreEnvio,
             contentType: "application/JSON",
-            dataType: "JSON",
+            datatype: "JSON",
 
             success: function(response){
                 alert(response);

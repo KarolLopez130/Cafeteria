@@ -106,11 +106,11 @@ public class ServicioPostre {
 
     }
 
-    public String borrarPostre(Postre postreAux){
+    public String borrarPostre(String codPostre){
 
         for (int i = 0; i < postresAux.size(); i++){
 
-            if (postresAux.get(i).getCodigo().equals(postreAux.getCodigo())){
+            if (postresAux.get(i).getCodigo().equals(codPostre)){
 
                 System.out.println("\nPostre Encontrado.");
                 System.out.println(postresAux.get(i).toString());

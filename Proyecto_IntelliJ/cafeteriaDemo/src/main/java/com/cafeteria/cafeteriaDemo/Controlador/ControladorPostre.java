@@ -37,9 +37,9 @@ public class ControladorPostre {
         return GPostres.editarPostre(postreAux);
     }
 
-    @DeleteMapping("/BorrarPostre")
-    public String deletePostre(@RequestBody Postre postreAux){
-        return GPostres.borrarPostre(postreAux);
+    @DeleteMapping("/BorrarPostre/{cod}")
+    public String deletePostre(@PathVariable("cod") String codPostre){
+        return GPostres.borrarPostre(codPostre);
     }
 
     /*
